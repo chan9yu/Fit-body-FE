@@ -1,20 +1,25 @@
 <template>
-  <div>
-    <p>테스트입니다.</p>
-  </div>
+  <main>
+    <MainImage />
+    <v-container>
+      <BestProduct />
+      <NewProduct />
+    </v-container>
+  </main>
 </template>
 
 <script>
+import MainImage from '@/components/home/MainImage'
+import BestProduct from '@/components/home/BestProduct'
+import NewProduct from '@/components/home/NewProduct'
+
 export default {
-  setup () {
-    return {}
+  components: {
+    MainImage,
+    BestProduct,
+    NewProduct
   }
 }
 </script>
 
-<style lang="scss">
-p {
-  @include font-size(50);
-  color: $gray-500;
-}
-</style>
+<style lang="scss"></style>

@@ -15,7 +15,7 @@ export default {
 <style lang="scss" scoped>
 .logo {
   > a {
-      @include font-size(40);
+    @include font-size(35);
     color: $gray-900;
     text-decoration: none;
   }
