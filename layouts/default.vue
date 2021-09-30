@@ -6,15 +6,18 @@
         <Nuxt />
       </transition>
     </v-main>
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import Header from '@/components/common/Header'
+import Footer from '@/components/common/Footer'
 
 export default {
   components: {
-    Header
+    Header,
+    Footer
   }
 }
 </script>

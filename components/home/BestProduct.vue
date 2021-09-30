@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col v-for="i in 3" :key="i">
+      <v-col v-for="i in 3" :key="i" cols="12" lg="4">
         <v-card>
           <v-img
             :src="require(`@/assets/images/product/best/product_best${i}.png`)"
