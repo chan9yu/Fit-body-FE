@@ -36,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.v-responsive__content {
+  height: 100px !important;
+}
+</style>

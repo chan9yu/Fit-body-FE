@@ -11,7 +11,9 @@
           :key="nav.name"
         >
           <v-btn text nuxt :to="nav.to">
-            <div>{{ nav.name }}</div>
+            <div class="font-weight-regular">
+              {{ nav.name }}
+            </div>
           </v-btn>
         </v-toolbar-items>
         <v-spacer />
@@ -21,7 +23,9 @@
           :key="beforeLoginNav.name"
         >
           <v-btn text nuxt :to="beforeLoginNav.to">
-            <div>{{ beforeLoginNav.name }}</div>
+            <div class="font-weight-regular">
+              {{ beforeLoginNav.name }}
+            </div>
           </v-btn>
         </v-toolbar-items>
       </template>
