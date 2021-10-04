@@ -1,8 +1,5 @@
 <template>
   <v-container class="my-16">
-    <p class="text-h3 font-weight-regular text-center my-16">
-      All Products
-    </p>
     <v-row>
       <v-col v-for="index in 16" :key="index" cols="12" lg="3" md="4">
         <v-hover>
@@ -46,11 +43,9 @@
 
 <script>
 export default {
-  data () {
-    return {
-      overlay: false,
-      zIndex: 0
-    }
-  }
 }
 </script>
+
+<style>
+
+</style>

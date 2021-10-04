@@ -25,7 +25,7 @@ export default {
 <style lang="scss">
 // 라우터 트랜지션
 :is(.fade-enter-active, .fade-leave-active) {
-  transition: opacity .9s;
+  transition: opacity .5s;
 }
 
 :is(.fade-enter, .fade-leave-to) {

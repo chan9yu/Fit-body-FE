@@ -95,10 +95,10 @@ export default {
   data () {
     return {
       navs: [
-        { name: '근력기구', to: '/category/muscle', icon: 'mdi-weight-lifter' },
-        { name: '유산소기구', to: '/category/aerobic', icon: 'mdi-human-scooter' },
-        { name: '악세사리', to: '/category/accessories', icon: 'mdi-handball' },
-        { name: '어시스트', to: '/category/assist', icon: 'mdi-hand-front-left' }
+        { name: '근력기구', to: '/muscle', icon: 'mdi-weight-lifter' },
+        { name: '유산소기구', to: '/aerobic', icon: 'mdi-human-scooter' },
+        { name: '웨이트기구', to: '/weight', icon: 'mdi-handball' },
+        { name: '어시스트', to: '/assist', icon: 'mdi-hand-front-left' }
       ],
       beforeLoginNavs: [
         { name: '로그인', to: '/login', icon: 'mdi-login' },
