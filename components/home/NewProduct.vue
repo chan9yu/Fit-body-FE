@@ -27,7 +27,9 @@
                     <div class="subtitle-1 font-weight-thin pa-2">
                       1,000,000원
                     </div>
-                    <v-btn>상품보러가기</v-btn>
+                    <v-btn nuxt to="/product/1">
+                      상품보러가기
+                    </v-btn>
                   </div>
                 </v-overlay>
               </v-fade-transition>
