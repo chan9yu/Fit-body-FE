@@ -49,7 +49,8 @@ export default {
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/axios'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -57,6 +58,13 @@ export default {
   },
 
   server: {
-    port: 8080
+    port: process.env.NODE_ENV === 'production' ? null : 8080
+  },
+
+  // env config
+  env: {
+    baseURL: process.env.NODE_ENV === 'production'
+      ? '배포후에 설정해주기'
+      : 'http://localhost:3000'
   }
 }
