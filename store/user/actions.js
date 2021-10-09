@@ -1,13 +1,14 @@
-import { loginUser } from '@/api/auth'
-
 export default {
+  async SIGNUP ({ commit }, payload) {
+    const res = await this.$axios.$post(`${process.env.baseURL}/user/signup`, payload)
+    return res
+  },
+
   async LOGIN ({ commit }, payload) {
-    try {
-      const { data } = await loginUser(payload)
-      commit('SET_USER', data)
-      return data
-    } catch {
-      alert('로그인이 실패하였습니다')
-    }
+    const res = await this.$axios.$post(`${process.env.baseURL}/user/login`, payload, {
+      withCredentials: true
+    })
+    commit('SET_TOKEN', res)
+    return res
   }
 }

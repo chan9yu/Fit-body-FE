@@ -1,5 +1,8 @@
 export default {
-  SET_USER: (state, payload) => {
-    state.user = payload
+  SET_USER: (state, user) => {
+    state.user = user
+  },
+  SET_TOKEN: (state, token) => {
+    state.token = token
   }
 }

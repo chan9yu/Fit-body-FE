@@ -47,8 +47,6 @@
 </template>
 
 <script>
-import { signupUser } from '@/api/auth'
-
 export default {
   data () {
     return {
@@ -74,11 +72,12 @@ export default {
     async onSubmitForm () {
       if (this.$refs.form.validate()) {
         try {
-          await signupUser({
+          const data = {
             email: this.email,
             name: this.name,
             password: this.password
-          })
+          }
+          await this.$store.dispatch('user/SIGNUP', data)
           alert('가입이 완료되었습니다.')
           this.$router.push('/login')
         } catch (error) {

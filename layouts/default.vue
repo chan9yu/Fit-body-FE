@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import Cookie from 'js-cookie'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 
@@ -18,6 +19,11 @@ export default {
   components: {
     Header,
     Footer
+  },
+
+  created () {
+    const value = Cookie.get('auth')
+    this.$store.commit('user/SET_TOKEN', value)
   }
 }
 </script>
