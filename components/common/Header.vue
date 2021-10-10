@@ -126,6 +126,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Cookies from 'js-cookie'
 import Logo from '@/components/common/Logo'
 
 export default {
@@ -162,11 +163,18 @@ export default {
 
   methods: {
     // 각 버튼 마다 다른 기능 제공
-    onClickButton (data) {
+    async onClickButton (data) {
+      // 장바구니 이동
       if (data === 'Cart') {
         this.$router.push('/cart')
+      // 로그아웃
       } else {
-        console.log('잉 로그아웃')
+        try {
+          await this.$store.dispatch('user/LOGOUT')
+          Cookies.remove('auth')
+        } catch (error) {
+          alert(error.response.data.message)
+        }
       }
     }
   }

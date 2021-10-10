@@ -11,19 +11,30 @@
 </template>
 
 <script>
-import Cookie from 'js-cookie'
+import Cookies from 'js-cookie'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 
 export default {
+  name: 'Default',
+
   components: {
     Header,
     Footer
   },
 
   created () {
-    const value = Cookie.get('auth')
-    this.$store.commit('user/SET_TOKEN', value)
+    this.userInfo()
+  },
+
+  methods: {
+    userInfo () {
+      const value = Cookies.get('auth')
+      this.$store.commit('user/SET_TOKEN', value)
+      if (value) {
+        this.$store.dispatch('user/USER')
+      }
+    }
   }
 }
 </script>

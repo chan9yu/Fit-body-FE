@@ -34,7 +34,6 @@ export default {
       ]
     }
   },
-
   computed: {
     subTitle () {
       switch (this.$route.params.id) {
@@ -51,5 +50,4 @@ export default {
 </script>
 
 <style>
-
 </style>

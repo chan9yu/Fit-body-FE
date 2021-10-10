@@ -8,13 +8,11 @@
 <script>
 import ProductMenu from '@/components/product/ProductMenu'
 import ProductItems from '@/components/product/ProductItems'
-
 export default {
   components: {
     ProductMenu,
     ProductItems
   },
-
   data () {
     return {
       title: '어시스트',
@@ -46,5 +44,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

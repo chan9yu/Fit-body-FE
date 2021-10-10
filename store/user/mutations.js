@@ -4,5 +4,9 @@ export default {
   },
   SET_TOKEN: (state, token) => {
     state.token = token
+  },
+  DELETE_USER: (state) => {
+    state.user = null
+    state.token = null
   }
 }
