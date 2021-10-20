@@ -44,18 +44,25 @@
       <input ref="imageInput" type="file" multiple hidden @change="onChangeImages">
       <div class="button-box">
         <v-btn type="button" @click="onClickImageUpload">
-          이미지 업로드 {{ images }}
+          이미지 업로드
         </v-btn>
         <v-btn type="submit" :disabled="!valid">
           상품 등록 하기
         </v-btn>
       </div>
     </v-form>
+    <ImageBox :images="images" @imageDelete="imageDelete" />
   </v-container>
 </template>
 
 <script>
+import ImageBox from '@/components/upload/ImageBox'
+
 export default {
+  components: {
+    ImageBox
+  },
+
   data () {
     return {
       valid: false,
@@ -94,16 +101,28 @@ export default {
         alert(error.response.data.message)
       }
     },
-    onSubmitForm () {
-      const data = {
-        images: this.images,
-        title: this.title,
-        description: this.description,
-        price: this.price,
-        categorys: this.categorys,
-        subCategorys: this.subCategorys
+    async onSubmitForm () {
+      try {
+        const productInfo = {
+          images: this.images,
+          title: this.title,
+          description: this.description,
+          price: this.price,
+          categorys: this.categorys,
+          subCategorys: this.subCategorys
+        }
+        const { data } = await this.$store.dispatch('post/PRODUCT_UPLOAD', productInfo)
+        console.log(data)
+      } catch (error) {
+        alert(error.response.data.message)
       }
-      console.log(data)
+    },
+    imageDelete (image) {
+      console.log(image)
+      const index = this.images.indexOf(image)
+      const newImage = [...this.images]
+      newImage.splice(index, 1)
+      this.images = newImage
     }
   }
 }

@@ -3,5 +3,12 @@ export default {
     const config = { header: { 'content-type': 'multipart/form-data' } }
     const res = await this.$axios.$post(`${process.env.baseURL}/product/images`, payload, config)
     return res
+  },
+
+  async PRODUCT_UPLOAD  ({ commit }, payload) {
+    const res = await this.$axios.$post(`${process.env.baseURL}/product`, payload, {
+      withCredentials: true
+    })
+    return res
   }
 }

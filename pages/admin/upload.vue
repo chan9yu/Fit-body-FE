@@ -1,17 +1,17 @@
 <template>
   <v-container>
     <v-card class="mt-5">
-      <ProductForm />
+      <UploadForm />
     </v-card>
   </v-container>
 </template>
 
 <script>
-import ProductForm from '@/components/upload/ProductForm'
+import UploadForm from '@/components/upload/UploadForm'
 
 export default {
   components: {
-    ProductForm
+    UploadForm
   }
 }
 </script>

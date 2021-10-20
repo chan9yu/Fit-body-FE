@@ -18,6 +18,7 @@ export default {
     @include font-size(30);
     color: #333;
     text-decoration: none;
+    z-index: 10;
   }
 }
 </style>
