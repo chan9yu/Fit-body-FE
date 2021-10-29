@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <ProductMenu :title="`${ title }(${ subTitle })`" :sub-menus="subMenus" />
-    <ProductItems />
+    <ProductItems :sub-categorys="subTitle" />
   </v-container>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <ProductMenu :title="title" :sub-menus="subMenus" />
-    <ProductItems />
+    <ProductItems :categorys="'weight'" />
   </v-container>
 </template>
 

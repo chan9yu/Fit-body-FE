@@ -111,18 +111,25 @@ export default {
           categorys: this.categorys,
           subCategorys: this.subCategorys
         }
-        const { data } = await this.$store.dispatch('post/PRODUCT_UPLOAD', productInfo)
-        console.log(data)
+        await this.$store.dispatch('post/PRODUCT_UPLOAD', productInfo)
+        this.clearFormInput()
       } catch (error) {
         alert(error.response.data.message)
       }
     },
     imageDelete (image) {
-      console.log(image)
       const index = this.images.indexOf(image)
       const newImage = [...this.images]
       newImage.splice(index, 1)
       this.images = newImage
+    },
+    clearFormInput () {
+      this.images = []
+      this.title = ' '
+      this.description = ' '
+      this.price = 1
+      this.categorys = ' '
+      this.subCategorys = ' '
     }
   }
 }

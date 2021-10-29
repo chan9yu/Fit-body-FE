@@ -15,10 +15,9 @@ export default {
 <style lang="scss" scoped>
 .logo {
   > a {
-    @include font-size(30);
+    @include font-size(28);
     color: #333;
     text-decoration: none;
-    z-index: 10;
   }
 }
 </style>

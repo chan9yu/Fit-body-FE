@@ -1,3 +1,5 @@
 export default () => ({
-  product: null
+  productInfo: [],
+  skip: 0,
+  limit: 16
 })

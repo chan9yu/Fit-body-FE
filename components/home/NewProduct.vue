@@ -4,12 +4,12 @@
       All Products
     </p>
     <v-row>
-      <v-col v-for="index in 16" :key="index" cols="12" lg="3" md="4">
+      <v-col v-for="product in productInfo.products" :key="product._id" cols="12" lg="3" md="4">
         <v-hover>
           <template #default="{ hover }">
             <v-card>
               <v-img
-                src="http://placeimg.com/640/480/people"
+                :src="`${imageUri}/${product.images[0]}`"
                 :aspect-ratio="8/8"
                 width="auto"
               />
@@ -18,14 +18,14 @@
                   v-if="hover"
                   absolute
                   z-index="4"
-                  color="#2c3e50"
+                  color="#111"
                 >
                   <div class="text-center">
                     <div class="text-h6 pa-2">
-                      [카테고리]상품제목이 들어가는 부분입니다.
+                      [{{ product.subCategorys }}]{{ productTitle(product.title) }}
                     </div>
                     <div class="subtitle-1 font-weight-thin pa-2">
-                      1,000,000원
+                      {{ product.price }}원
                     </div>
                     <v-btn nuxt to="/product/1">
                       상품보러가기
@@ -39,7 +39,12 @@
       </v-col>
     </v-row>
     <div class="text-center">
-      <v-btn text class="text-h4 font-weight-regular my-16">
+      <v-btn
+        v-if="productInfo.postSize >= limit"
+        text
+        class="text-h4 font-weight-regular my-16"
+        @click="loadMoreProductsInfo"
+      >
         - LOAD MORE -
       </v-btn>
     </div>
@@ -47,11 +52,60 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
       overlay: false,
       zIndex: 0
+    }
+  },
+
+  computed: {
+    ...mapState('post', ['productInfo', 'skip', 'limit']),
+    imageUri () {
+      return process.env.baseURL
+    }
+  },
+
+  created () {
+    this.getProductsInfo()
+  },
+
+  methods: {
+    async getProductsInfo () {
+      try {
+        const body = {
+          skip: this.skip,
+          limit: this.limit
+        }
+        await this.$store.dispatch('post/PRODUCT_INFO', body)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async loadMoreProductsInfo () {
+      try {
+        this.$store.commit('post/SET_SKIP', this.skip + this.limit)
+        const body = {
+          skip: this.skip,
+          limit: this.limit,
+          loadMore: true // 상품 더보기 구분!
+        }
+        await this.$store.dispatch('post/PRODUCT_INFO', body)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    // 글자 수 20자 넘길 시 ... 처리
+    productTitle (title) {
+      const len = 20
+      const lastTxt = '...'
+      const newTitle = title.length > len
+        ? title = title.substr(0, len) + lastTxt
+        : title
+      return newTitle
     }
   }
 }
