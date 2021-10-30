@@ -3,17 +3,19 @@
     <div class="product-content">
       <div class="mb-12">
         <div class="text-h6 text--secondary mb-12">
-          근력기구 > 덤벨
+          {{ product[0].categorys }} > {{ product[0].subCategorys }}
         </div>
         <div class="text-h4 mb-4">
-          프리시전 누오 무게조절덤벨 32kg I
-          누오정품 2kg단위 무게조절
+          {{ product[0].title }}
+        </div>
+        <div class="text-h8 mb-4">
+          {{ product[0].description }}
         </div>
         <div class="text-h6 mb-2 text--secondary">
           Price
         </div>
         <div class="text-h4">
-          250,000원
+          {{ price }}원
         </div>
       </div>
       <v-divider />
@@ -23,17 +25,17 @@
           <span class="text-subtitle-2">EA</span>
           <input type="number" value="1" max="5">
         </div>
-        <span class="text-h6">250,000원</span>
+        <span class="text-h6">{{ price }}원</span>
       </div>
       <v-divider />
       <div class="prouduct-price my-8">
         <span class="text-h6 text--secondary">Price</span>
-        <span class="text-h6">250,000원</span>
+        <span class="text-h6">{{ price }}원</span>
       </div>
       <v-divider />
       <div class="prouduct-price my-8">
         <span class="text-h6 text--secondary">Total</span>
-        <span class="text-h6">250,000원</span>
+        <span class="text-h6">{{ price }}원</span>
       </div>
       <div class="product-btns">
         <v-btn>
@@ -49,8 +51,17 @@
 
 <script>
 export default {
-  setup () {
-    return {}
+  props: {
+    product: {
+      type: Array,
+      required: true
+    }
+  },
+
+  computed: {
+    price () {
+      return this.product[0].price.toLocaleString()
+    }
   }
 }
 </script>

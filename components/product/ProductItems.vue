@@ -22,9 +22,9 @@
                       [{{ product.subCategorys }}]{{ productTitle(product.title) }}
                     </div>
                     <div class="subtitle-1 font-weight-thin pa-2">
-                      {{ product.price }}원
+                      {{ price(product.price) }}원
                     </div>
-                    <v-btn nuxt to="/product/1">
+                    <v-btn @click="toProductDetail(product._id)">
                       상품보러가기
                     </v-btn>
                   </div>
@@ -83,7 +83,7 @@ export default {
         categorys: this.categorys,
         subCategorys: this.subCategorys
       }
-      await this.$store.dispatch('post/PRODUCT_INFO', body)
+      await this.$store.dispatch('post/PRODUCTS_INFO', body)
     },
     async loadMoreProductsInfo () {
       try {
@@ -95,7 +95,7 @@ export default {
           subCategorys: this.subCategorys,
           loadMore: true // 상품 더보기 구분!
         }
-        await this.$store.dispatch('post/PRODUCT_INFO', body)
+        await this.$store.dispatch('post/PRODUCTS_INFO', body)
       } catch (error) {
         console.error(error)
       }
@@ -107,6 +107,12 @@ export default {
         ? title = title.substr(0, len) + lastTxt
         : title
       return newTitle
+    },
+    toProductDetail (id) {
+      this.$router.push(`/product/${id}`)
+    },
+    price (price) {
+      return price.toLocaleString()
     }
   }
 }
