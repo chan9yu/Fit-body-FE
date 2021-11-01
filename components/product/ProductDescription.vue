@@ -22,8 +22,7 @@
       <div class="product-counting my-8">
         <!-- 상품의 갯수만큼 가격증가 -->
         <div class="input-box">
-          <span class="text-subtitle-2">EA</span>
-          <input type="number" value="1" max="5">
+          <span class="text-subtitle-2">1 EA</span>
         </div>
         <span class="text-h6">{{ price }}원</span>
       </div>
@@ -39,7 +38,7 @@
       </div>
       <div class="product-btns">
         <v-btn>
-          구매하기
+          구매하기 {{ withProducts }}
         </v-btn>
         <v-btn>
           장바구니

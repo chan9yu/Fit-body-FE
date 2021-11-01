@@ -25,5 +25,11 @@ export default {
     }
     commit('SET_PRODUCT_INFO', res)
     return res
+  },
+
+  async WITH_PRODUCT ({ commit }, payload) {
+    const res = await this.$axios.$post(`${process.env.baseURL}/product/with`, payload)
+    commit('SET_WITH_PRODUCTS', res)
+    return res
   }
 }

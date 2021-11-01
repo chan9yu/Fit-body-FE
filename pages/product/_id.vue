@@ -8,7 +8,7 @@
         <ProductDescription :product="product" />
       </v-col>
     </v-row>
-    <WithItems />
+    <WithItems :categorys="product[0].categorys" />
   </v-container>
 </template>
 

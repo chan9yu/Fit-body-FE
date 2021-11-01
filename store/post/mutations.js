@@ -5,6 +5,9 @@ export default {
   SET_PRODUCT: (state, payload) => {
     state.product = payload
   },
+  SET_WITH_PRODUCTS: (state, payload) => {
+    state.withProducts = payload
+  },
   SET_SKIP: (state, payload) => {
     state.skip = payload
   }
