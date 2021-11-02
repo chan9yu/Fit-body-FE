@@ -7,6 +7,9 @@
       </transition>
     </v-main>
     <Footer />
+    <transition name="fade">
+      <Alert />
+    </transition>
   </v-app>
 </template>
 
@@ -14,13 +17,15 @@
 import Cookies from 'js-cookie'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
+import Alert from '@/components/common/Alert.vue'
 
 export default {
   name: 'Default',
 
   components: {
     Header,
-    Footer
+    Footer,
+    Alert
   },
 
   created () {
@@ -40,11 +45,10 @@ export default {
 </script>
 
 <style lang="scss">
-// 라우터 트랜지션
+// 트랜지션
 :is(.fade-enter-active, .fade-leave-active) {
   transition: opacity .5s;
 }
-
 :is(.fade-enter, .fade-leave-to) {
   opacity: 0;
 }

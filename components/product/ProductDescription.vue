@@ -38,9 +38,9 @@
       </div>
       <div class="product-btns">
         <v-btn>
-          구매하기 {{ withProducts }}
+          구매하기
         </v-btn>
-        <v-btn>
+        <v-btn @click="addCart">
           장바구니
         </v-btn>
       </div>
@@ -60,6 +60,12 @@ export default {
   computed: {
     price () {
       return this.product[0].price.toLocaleString()
+    }
+  },
+
+  methods: {
+    addCart () {
+      this.$store.commit('OPEN_ALERT')
     }
   }
 }

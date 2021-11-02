@@ -68,9 +68,7 @@ export default {
   methods: {
     async setWithItem () {
       try {
-        await this.$store.dispatch('post/WITH_PRODUCT', {
-          categorys: this.categorys
-        })
+        await this.$store.dispatch('post/WITH_PRODUCT')
       } catch (error) {
         console.error(error)
       }
