@@ -29,7 +29,7 @@ export default {
   async fetch ({ store, params }) {
     try {
       const { id } = params
-      const { data } = await axios.get(`${process.env.baseURL}/product/${id}`)
+      const { data } = await axios.get(`${process.env.baseURL}/product?id=${id}`)
       store.commit('post/SET_PRODUCT', data)
       // 이전 데이터 초기화
       store.commit('post/SET_PRODUCT_INFO', {})

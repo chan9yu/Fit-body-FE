@@ -7,9 +7,7 @@
       </transition>
     </v-main>
     <Footer />
-    <transition name="fade">
-      <Alert />
-    </transition>
+    <Alert />
   </v-app>
 </template>
 

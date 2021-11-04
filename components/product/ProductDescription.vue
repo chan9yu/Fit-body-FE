@@ -20,7 +20,6 @@
       </div>
       <v-divider />
       <div class="product-counting my-8">
-        <!-- 상품의 갯수만큼 가격증가 -->
         <div class="input-box">
           <span class="text-subtitle-2">1 EA</span>
         </div>
@@ -37,7 +36,7 @@
         <span class="text-h6">{{ price }}원</span>
       </div>
       <div class="product-btns">
-        <v-btn>
+        <v-btn @click="buyProduct">
           구매하기
         </v-btn>
         <v-btn @click="addCart">
@@ -49,6 +48,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   props: {
     product: {
@@ -58,14 +59,32 @@ export default {
   },
 
   computed: {
+    ...mapGetters('user', ['isLogin']),
     price () {
       return this.product[0].price.toLocaleString()
     }
   },
 
   methods: {
-    addCart () {
-      this.$store.commit('OPEN_ALERT')
+    buyProduct () {
+      if (this.isLogin) {
+        this.$store.commit('SET_MESSAGE', '구매 구현 준비중 입니다!')
+        this.$store.commit('OPEN_ALERT')
+      } else {
+        this.$store.commit('SET_MESSAGE', '로그인이 필요한 서비스 입니다!')
+        this.$store.commit('OPEN_ALERT')
+      }
+    },
+    async addCart () {
+      if (this.isLogin) {
+        const id = this.product[0]._id
+        await this.$store.dispatch('user/ADD_CART', id)
+        this.$store.commit('SET_MESSAGE', '장바구니에 상품을 담았습니다!')
+        this.$store.commit('OPEN_ALERT')
+      } else {
+        this.$store.commit('SET_MESSAGE', '로그인이 필요한 서비스 입니다!')
+        this.$store.commit('OPEN_ALERT')
+      }
     }
   }
 }

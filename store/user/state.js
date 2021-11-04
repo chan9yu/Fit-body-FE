@@ -1,4 +1,8 @@
+const getUserLocalStorage = () => JSON.parse(localStorage.getItem('user'))
+
 export default () => ({
-  user: null,
-  token: null
+  user: getUserLocalStorage() !== null ? getUserLocalStorage() : {},
+  token: null,
+  cartId: [],
+  cartItem: []
 })

@@ -6,13 +6,11 @@
       border="left"
       elevation="2"
       colored-border
+      transition="slide-y-transition"
     >
-      You've got <strong>5</strong> new updates on your timeline!.
-      <v-icon
-        dark
-        right
-      >
-        mdi-checkbox-marked-circle
+      <span>{{ message }}</span>
+      <v-icon class="close-btn" @click="closeAlert">
+        mdi-close-circle
       </v-icon>
     </v-alert>
   </div>
@@ -23,7 +21,24 @@ import { mapState } from 'vuex'
 
 export default {
   computed: {
-    ...mapState(['alert'])
+    ...mapState(['alert', 'message'])
+  },
+
+  updated () {
+    this.$nextTick(() => {
+      this.autoCloseAlert()
+    })
+  },
+
+  methods: {
+    closeAlert () {
+      this.$store.commit('COLSE_ALERT')
+    },
+    autoCloseAlert () {
+      this.timer = setTimeout(() => {
+        this.closeAlert()
+      }, 5000)
+    }
   }
 }
 </script>
@@ -34,5 +49,11 @@ export default {
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
+  span {
+    padding: 0 20px 0 10px;
+  }
+  .close-btn {
+    cursor: pointer;
+  }
 }
 </style>

@@ -18,13 +18,23 @@ export default {
       withCredentials: true
     })
     commit('SET_USER', res)
+    localStorage.setItem('user', JSON.stringify(res))
     return res
   },
 
   async LOGOUT ({ commit }) {
-    await this.$axios.$get(`${process.env.baseURL}/user/logout`, {
+    const res = await this.$axios.$get(`${process.env.baseURL}/user/logout`, {
       withCredentials: true
     })
     commit('DELETE_USER')
+    localStorage.removeItem('user')
+    return res
+  },
+
+  async ADD_CART ({ commit }, payload) {
+    const res = await this.$axios.$post(`${process.env.baseURL}/cart/add/${payload}`, '', {
+      withCredentials: true
+    })
+    return res
   }
 }

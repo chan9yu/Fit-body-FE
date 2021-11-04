@@ -4,10 +4,13 @@ export const state = () => ({
 })
 
 export const mutations = {
-  OPEN_ALERT (state) {
+  OPEN_ALERT: (state) => {
     state.alert = true
   },
-  SET_MESSAGE (state, payload) {
+  COLSE_ALERT: (state) => {
+    state.alert = false
+  },
+  SET_MESSAGE: (state, payload) => {
     state.message = payload
   }
 }

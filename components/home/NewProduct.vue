@@ -81,8 +81,9 @@ export default {
           limit: this.limit
         }
         await this.$store.dispatch('post/PRODUCTS_INFO', body)
-      } catch (error) {
-        console.error(error)
+      } catch {
+        this.$store.commit('SET_MESSAGE', '정보를 불러오는데 실패하였습니다!')
+        this.$store.commit('OPEN_ALERT')
       }
     },
     async loadMoreProductsInfo () {
@@ -94,8 +95,9 @@ export default {
           loadMore: true // 상품 더보기 구분!
         }
         await this.$store.dispatch('post/PRODUCTS_INFO', body)
-      } catch (error) {
-        console.error(error)
+      } catch {
+        this.$store.commit('SET_MESSAGE', '정보를 불러오는데 실패하였습니다!')
+        this.$store.commit('OPEN_ALERT')
       }
     },
     // 글자 수 20자 넘길 시 ... 처리

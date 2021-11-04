@@ -8,5 +8,11 @@ export default {
   DELETE_USER: (state) => {
     state.user = null
     state.token = null
+  },
+  SET_CART_ID: (state, cartId) => {
+    state.cartId.push(cartId)
+  },
+  SET_CART_ITEM: (state, cartItem) => {
+    state.cartItem = cartItem
   }
 }
