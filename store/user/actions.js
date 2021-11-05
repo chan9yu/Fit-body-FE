@@ -18,7 +18,6 @@ export default {
       withCredentials: true
     })
     commit('SET_USER', res)
-    localStorage.setItem('user', JSON.stringify(res))
     return res
   },
 
@@ -27,7 +26,6 @@ export default {
       withCredentials: true
     })
     commit('DELETE_USER')
-    localStorage.removeItem('user')
     return res
   },
 

@@ -14,3 +14,9 @@ export const mutations = {
     state.message = payload
   }
 }
+
+export const actions = {
+  async nuxtServerInit (storeContext, nuxtContext) {
+    await storeContext.dispatch('user/USER')
+  }
+}

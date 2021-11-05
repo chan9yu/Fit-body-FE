@@ -34,9 +34,6 @@ export default {
     userInfo () {
       const value = Cookies.get('auth')
       this.$store.commit('user/SET_TOKEN', value)
-      if (value) {
-        this.$store.dispatch('user/USER')
-      }
     }
   }
 }

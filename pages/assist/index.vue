@@ -8,6 +8,7 @@
 <script>
 import ProductMenu from '@/components/product/ProductMenu'
 import ProductItems from '@/components/product/ProductItems'
+
 export default {
   components: {
     ProductMenu,
