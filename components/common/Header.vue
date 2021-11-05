@@ -164,17 +164,20 @@ export default {
   methods: {
     // 각 버튼 마다 다른 기능 제공
     async onClickButton (data) {
-      // 장바구니 이동
-      if (data === 'Cart') {
-        this.$router.push('/cart')
-      // 로그아웃
-      } else {
-        try {
-          await this.$store.dispatch('user/LOGOUT')
-          Cookies.remove('auth')
-        } catch (error) {
-          alert(error.response.data.message)
-        }
+      switch (data) {
+        case 'Cart':
+          this.$router.push('/cart')
+          break
+        case 'Logout':
+          try {
+            await this.$store.dispatch('user/LOGOUT')
+            Cookies.remove('auth')
+          } catch (error) {
+            alert(error.response.data.message)
+          }
+          break
+        default:
+          break
       }
     }
   }

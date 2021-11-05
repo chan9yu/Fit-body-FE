@@ -49,6 +49,7 @@ export default {
   methods: {
     updateCart (data) {
       this.$store.commit('user/SET_CART_ITEM', data)
+      this.$router.go()
     }
   }
 }

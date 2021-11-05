@@ -6,7 +6,7 @@ export default {
     state.token = token
   },
   DELETE_USER: (state) => {
-    state.user = null
+    state.user = {}
     state.token = null
   },
   SET_CART_ID: (state, cartId) => {

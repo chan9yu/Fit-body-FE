@@ -42,6 +42,7 @@
         <v-btn @click="addCart">
           장바구니
         </v-btn>
+        {{ alert }}
       </div>
     </div>
   </v-container>
@@ -58,10 +59,25 @@ export default {
     }
   },
 
+  // data() {
+  //   return {
+  //     key: value
+  //   }
+  // },
+
   computed: {
     ...mapGetters('user', ['isLogin']),
     price () {
       return this.product[0].price.toLocaleString()
+    },
+    alert () {
+      return this.$store.state.alert
+    }
+  },
+
+  watch: {
+    alert () {
+      this.$router.go()
     }
   },
 

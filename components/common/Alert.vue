@@ -24,6 +24,7 @@ export default {
     ...mapState(['alert', 'message'])
   },
 
+  // 바꾸자
   updated () {
     this.$nextTick(() => {
       this.autoCloseAlert()
