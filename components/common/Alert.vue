@@ -24,21 +24,9 @@ export default {
     ...mapState(['alert', 'message'])
   },
 
-  // 바꾸자
-  updated () {
-    this.$nextTick(() => {
-      this.autoCloseAlert()
-    })
-  },
-
   methods: {
     closeAlert () {
       this.$store.commit('COLSE_ALERT')
-    },
-    autoCloseAlert () {
-      this.timer = setTimeout(() => {
-        this.closeAlert()
-      }, 5000)
     }
   }
 }

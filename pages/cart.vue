@@ -27,7 +27,7 @@ export default {
       })
       const { cartId } = store.state.user
       const { data } = await axios.get(`${process.env.baseURL}/product/?id=${cartId}&type=array`)
-      // quantity(수량) 데이터를 받아온 데이터에 포함 시켜서 저장
+      // 수량 데이터를 받아온 데이터에 포함 시켜서 저장
       Array.prototype.forEach.call(cart, (cartItem) => {
         data.forEach((productDetail, index) => {
           if (cartItem.id === productDetail._id) {
@@ -43,13 +43,21 @@ export default {
   },
 
   computed: {
+    ...mapState(['alertToggle']),
     ...mapState('user', ['user'])
+  },
+
+  watch: {
+    alertToggle () {
+      this.$router.go()
+    }
   },
 
   methods: {
     updateCart (data) {
       this.$store.commit('user/SET_CART_ITEM', data)
-      this.$router.go()
+      this.$store.commit('SET_MESSAGE', '상품을 삭제하였습니다!')
+      this.$store.commit('OPEN_ALERT')
     }
   }
 }

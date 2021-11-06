@@ -42,14 +42,13 @@
         <v-btn @click="addCart">
           장바구니
         </v-btn>
-        {{ alert }}
       </div>
     </div>
   </v-container>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   props: {
@@ -59,24 +58,16 @@ export default {
     }
   },
 
-  // data() {
-  //   return {
-  //     key: value
-  //   }
-  // },
-
   computed: {
+    ...mapState(['alertToggle']),
     ...mapGetters('user', ['isLogin']),
     price () {
       return this.product[0].price.toLocaleString()
-    },
-    alert () {
-      return this.$store.state.alert
     }
   },
 
   watch: {
-    alert () {
+    alertToggle () {
       this.$router.go()
     }
   },

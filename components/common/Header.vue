@@ -126,7 +126,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Cookies from 'js-cookie'
 import Logo from '@/components/common/Logo'
 
 export default {
@@ -171,15 +170,27 @@ export default {
         case 'Logout':
           try {
             await this.$store.dispatch('user/LOGOUT')
-            Cookies.remove('auth')
+            this.deleteAllCookies()
+            this.$store.commit('SET_MESSAGE', '로그아웃을 하였습니다!')
+            this.$store.commit('OPEN_ALERT')
+            this.$router.replace('/')
           } catch (error) {
-            alert(error.response.data.message)
+            this.$store.commit('SET_MESSAGE', error.response.data.message)
+            this.$store.commit('OPEN_ALERT')
           }
           break
         default:
           break
       }
+    },
+    deleteAllCookies () {
+      const cookies = document.cookie.split('; ')
+      let index = 0
+      for (index in cookies) {
+        document.cookie = /^[^=]+/.exec(cookies[index])[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT'
+      }
     }
   }
 }
+
 </script>

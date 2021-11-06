@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import Cookies from 'js-cookie'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 import Alert from '@/components/common/Alert.vue'
@@ -24,17 +23,6 @@ export default {
     Header,
     Footer,
     Alert
-  },
-
-  created () {
-    this.userInfo()
-  },
-
-  methods: {
-    userInfo () {
-      const value = Cookies.get('auth')
-      this.$store.commit('user/SET_TOKEN', value)
-    }
   }
 }
 </script>

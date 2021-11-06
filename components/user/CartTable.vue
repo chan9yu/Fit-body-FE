@@ -86,8 +86,9 @@ export default {
           })
         })
         this.$emit('updateCart', data.productInfo)
-      } catch (error) {
-        console.error(error)
+      } catch {
+        this.$store.commit('SET_MESSAGE', '상품을 삭제하는데 실패하였습니다.')
+        this.$store.commit('OPEN_ALERT')
       }
     },
     price (price) {
