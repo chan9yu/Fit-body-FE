@@ -25,14 +25,7 @@ export default {
     const res = await this.$axios.$get(`${process.env.baseURL}/user/logout`, {
       withCredentials: true
     })
-    commit('DELETE_USER')
-    return res
-  },
-
-  async ADD_CART ({ commit }, payload) {
-    const res = await this.$axios.$post(`${process.env.baseURL}/cart/add/${payload}`, '', {
-      withCredentials: true
-    })
+    commit('CLEAR_USER')
     return res
   }
 }

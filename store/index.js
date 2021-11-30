@@ -18,14 +18,15 @@ export const mutations = {
 }
 
 export const actions = {
-  // 만약 로그인이 되어있다면 스토어에 유저 데이터를 미리 설정
-  async nuxtServerInit ({ getters, commit, dispatch }, { req }) {
-    if (req.headers.cookie) {
-      const auth = req.headers.cookie.split(';')[0].replace(/^auth=/, '')
-      commit('user/SET_TOKEN', auth)
-    }
-    if (getters['user/isLogin']) {
-      await dispatch('user/USER')
-    }
+  // async nuxtServerInit ({ commit, dispatch }, { req }) {
+  //   if (req.headers.cookie.includes('connect.sid')) {
+  //     const res = await this.$axios.$get(`${process.env.baseURL}/user`, {
+  //       withCredentials: true
+  //     })
+  //     commit('user/SET_USER', res)
+  //   }
+  // }
+  nuxtServerInit ({ commit, dispatch, state }, { req }) {
+    return dispatch('user/USER')
   }
 }

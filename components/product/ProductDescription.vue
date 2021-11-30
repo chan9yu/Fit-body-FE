@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   props: {
@@ -60,7 +60,7 @@ export default {
 
   computed: {
     ...mapState(['alertToggle']),
-    ...mapGetters('user', ['isLogin']),
+    ...mapState('user', ['user']),
     price () {
       return this.product[0].price.toLocaleString()
     }
@@ -74,7 +74,7 @@ export default {
 
   methods: {
     buyProduct () {
-      if (this.isLogin) {
+      if (this.user !== null) {
         this.$store.commit('SET_MESSAGE', '구매 구현 준비중 입니다!')
         this.$store.commit('OPEN_ALERT')
       } else {
@@ -83,7 +83,7 @@ export default {
       }
     },
     async addCart () {
-      if (this.isLogin) {
+      if (this.user !== null) {
         const id = this.product[0]._id
         await this.$store.dispatch('user/ADD_CART', id)
         this.$store.commit('SET_MESSAGE', '장바구니에 상품을 담았습니다!')

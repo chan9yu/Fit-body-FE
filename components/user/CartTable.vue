@@ -73,7 +73,10 @@ export default {
   methods: {
     async removeCartItem (id) {
       try {
-        const { data } = await axios.get(`${process.env.baseURL}/cart/remove/?id=${id}`, { withCredentials: true })
+        const { data } = await axios.get(
+          `${process.env.baseURL}/cart/remove/?id=${id}`,
+          { withCredentials: true }
+        )
         Array.prototype.forEach.call(data.cart, (item) => {
           this.$store.commit('user/SET_CART_ID', item.id)
         })
