@@ -17,16 +17,9 @@ export const mutations = {
   }
 }
 
+// 로그인 상태 유지
 export const actions = {
-  // async nuxtServerInit ({ commit, dispatch }, { req }) {
-  //   if (req.headers.cookie.includes('connect.sid')) {
-  //     const res = await this.$axios.$get(`${process.env.baseURL}/user`, {
-  //       withCredentials: true
-  //     })
-  //     commit('user/SET_USER', res)
-  //   }
-  // }
-  nuxtServerInit ({ commit, dispatch, state }, { req }) {
+  nuxtServerInit ({ dispatch }) {
     return dispatch('user/USER')
   }
 }

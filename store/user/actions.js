@@ -8,7 +8,6 @@ export default {
     const res = await this.$axios.$post(`${process.env.baseURL}/user/login`, payload, {
       withCredentials: true
     })
-    commit('SET_TOKEN', res)
     dispatch('USER')
     return res
   },

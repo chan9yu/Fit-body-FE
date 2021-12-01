@@ -66,12 +66,6 @@ export default {
     }
   },
 
-  watch: {
-    alertToggle () {
-      this.$router.go()
-    }
-  },
-
   methods: {
     buyProduct () {
       if (this.user !== null) {
@@ -83,14 +77,12 @@ export default {
       }
     },
     async addCart () {
-      if (this.user !== null) {
-        const id = this.product[0]._id
-        await this.$store.dispatch('user/ADD_CART', id)
-        this.$store.commit('SET_MESSAGE', '장바구니에 상품을 담았습니다!')
+      try {
+        await this.$store.dispatch('cart/ADD_CART_ITEMS', this.product[0]._id)
+        this.$store.commit('SET_MESSAGE', '상품을 장바구니에 담았습니다')
         this.$store.commit('OPEN_ALERT')
-      } else {
-        this.$store.commit('SET_MESSAGE', '로그인이 필요한 서비스 입니다!')
-        this.$store.commit('OPEN_ALERT')
+      } catch (error) {
+        alert(error.response.data.message)
       }
     }
   }

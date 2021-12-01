@@ -10,7 +10,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import CartTable from '@/components/user/CartTable'
+import CartTable from '@/components/cart/CartTable'
 
 export default {
   components: {

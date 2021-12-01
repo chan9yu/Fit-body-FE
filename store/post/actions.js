@@ -1,19 +1,19 @@
+const PRODUCT_URI = `${process.env.baseURL}/product`
+const CONFIG = { header: { 'content-type': 'multipart/form-data' } }
+
 export default {
   async IMAGE_UPLOAD ({ commit }, payload) {
-    const config = { header: { 'content-type': 'multipart/form-data' } }
-    const res = await this.$axios.$post(`${process.env.baseURL}/product/images`, payload, config)
+    const res = await this.$axios.$post(`${PRODUCT_URI}/images`, payload, CONFIG)
     return res
   },
 
   async PRODUCT_UPLOAD ({ commit }, payload) {
-    const res = await this.$axios.$post(`${process.env.baseURL}/product`, payload, {
-      withCredentials: true
-    })
+    const res = await this.$axios.$post(`${PRODUCT_URI}`, payload, { withCredentials: true })
     return res
   },
 
   async PRODUCTS_INFO ({ state, commit }, payload) {
-    const res = await this.$axios.$post(`${process.env.baseURL}/product/products`, payload)
+    const res = await this.$axios.$post(`${PRODUCT_URI}/products`, payload)
     // loadMore 가 true 일 때, 분기 처리 (상품 더 보기)
     if (payload.loadMore) {
       const data = {
@@ -28,7 +28,7 @@ export default {
   },
 
   async WITH_PRODUCT ({ commit }) {
-    const res = await this.$axios.$get(`${process.env.baseURL}/product/with`)
+    const res = await this.$axios.$get(`${PRODUCT_URI}/with`)
     commit('SET_WITH_PRODUCTS', res)
     return res
   }
