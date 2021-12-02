@@ -7,6 +7,7 @@
       large
       color="primary"
       dark
+      @click="onClickPurchase"
     >
       모두 구매하기
     </v-btn>
@@ -30,6 +31,17 @@ export default {
         res = (count[i] * price[i]) + res
       }
       return res.toLocaleString()
+    },
+    async onClickPurchase () {
+      try {
+        await this.$store.dispatch('purchase/CART_ALL_PURCHASE')
+        await this.$store.dispatch('cart/CART_IMTES_INFO')
+        this.$store.commit('SET_MESSAGE', '구매를 완료했습니다.')
+        this.$store.commit('OPEN_ALERT')
+      } catch (error) {
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
+        this.$store.commit('OPEN_ALERT')
+      }
     }
   }
 }

@@ -67,22 +67,24 @@ export default {
   },
 
   methods: {
-    buyProduct () {
-      if (this.user !== null) {
-        this.$store.commit('SET_MESSAGE', '구매 구현 준비중 입니다!')
+    async buyProduct () {
+      try {
+        await this.$store.dispatch('purchase/ONE_PURCHASE', this.product[0]._id)
+        this.$store.commit('SET_MESSAGE', '구매를 완료했습니다.')
         this.$store.commit('OPEN_ALERT')
-      } else {
-        this.$store.commit('SET_MESSAGE', '로그인이 필요한 서비스 입니다!')
+      } catch (error) {
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
         this.$store.commit('OPEN_ALERT')
       }
     },
     async addCart () {
       try {
         await this.$store.dispatch('cart/ADD_CART_ITEMS', this.product[0]._id)
-        this.$store.commit('SET_MESSAGE', '상품을 장바구니에 담았습니다')
+        this.$store.commit('SET_MESSAGE', '상품을 장바구니에 담았습니다.')
         this.$store.commit('OPEN_ALERT')
       } catch (error) {
-        alert(error.response.data.message)
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
+        this.$store.commit('OPEN_ALERT')
       }
     }
   }

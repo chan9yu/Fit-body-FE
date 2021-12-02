@@ -7,13 +7,13 @@ export default {
     commit('SET_CART_INFO', res)
     if (state.cartInfo.length !== 0) {
       const ids = state.cartInfo.map(v => v.id)
-      dispatch('GET_CART_ITEMS', ids)
+      dispatch('GET_SEVERAL_ITEMS', ids)
     }
     return res
   },
 
-  async GET_CART_ITEMS ({ commit }, payload) {
-    const res = await this.$axios.$get(`${PRODUCT_URI}/${payload}/?type=cart`, { withCredentials: true })
+  async GET_SEVERAL_ITEMS ({ commit }, payload) {
+    const res = await this.$axios.$get(`${PRODUCT_URI}/${payload}/?type=array`, { withCredentials: true })
     commit('SET_CART_ITEMS', res)
     return res
   },
