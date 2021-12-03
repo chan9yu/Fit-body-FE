@@ -26,7 +26,7 @@
             </td>
             <td>{{ cartItem.title }}</td>
             <td>{{ price(cartItem.price, index) }}원</td>
-            <td>{{ count(index) }} 개</td>
+            <td>{{ count(cartItem._id) }} 개</td>
             <td>
               <v-btn
                 depressed
@@ -94,7 +94,8 @@ export default {
       try {
         await this.$store.dispatch('cart/CART_IMTES_INFO')
       } catch (error) {
-        console.error(error)
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
+        this.$store.commit('OPEN_ALERT')
       }
     },
     async removeCartItem (id) {
@@ -103,14 +104,15 @@ export default {
         this.$store.commit('SET_MESSAGE', '상품을 삭제했습니다!')
         this.$store.commit('OPEN_ALERT')
       } catch (error) {
-        console.error(error)
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
+        this.$store.commit('OPEN_ALERT')
       }
     },
     price (price, index) {
       return (this.cartInfo[index]?.count * price).toLocaleString()
     },
-    count (index) {
-      return this.cartInfo[index]?.count
+    count (productId) {
+      return this.cartInfo.find(v => v.id === productId).count
     }
   }
 }
@@ -130,5 +132,12 @@ export default {
   p {
     color: #888;
   }
+}
+
+:is(.fade-enter-active, .fade-leave-active) {
+  transition: opacity .5s;
+}
+:is(.fade-enter, .fade-leave-to) {
+  opacity: 0;
 }
 </style>

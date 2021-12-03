@@ -97,7 +97,8 @@ export default {
         }
         await this.$store.dispatch('post/PRODUCTS_INFO', body)
       } catch (error) {
-        console.error(error)
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
+        this.$store.commit('OPEN_ALERT')
       }
     },
     productTitle (title) {

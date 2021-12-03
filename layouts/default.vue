@@ -28,7 +28,6 @@ export default {
 </script>
 
 <style lang="scss">
-// 트랜지션
 :is(.fade-enter-active, .fade-leave-active) {
   transition: opacity .5s;
 }

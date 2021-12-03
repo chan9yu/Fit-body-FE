@@ -23,7 +23,7 @@ export default {
   },
 
   methods: {
-    updateCart (data) {
+    updateCart () {
       this.$store.commit('SET_MESSAGE', '상품을 삭제하였습니다!')
       this.$store.commit('OPEN_ALERT')
     }

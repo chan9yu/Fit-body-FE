@@ -53,13 +53,16 @@ export default {
             email: this.email,
             password: this.password
           })
-          alert('로그인이 되었습니다.')
+          this.$store.commit('SET_MESSAGE', '로그인이 되었습니다.')
+          this.$store.commit('OPEN_ALERT')
           this.$router.push('/')
         } catch (error) {
-          alert(error.response.data.message)
+          this.$store.commit('SET_MESSAGE', error.response.data.message)
+          this.$store.commit('OPEN_ALERT')
         }
       } else {
-        alert('빈칸이 있으면 안 됩니다.')
+        this.$store.commit('SET_MESSAGE', '빈칸이 있으면 안 됩니다.')
+        this.$store.commit('OPEN_ALERT')
       }
     }
   }

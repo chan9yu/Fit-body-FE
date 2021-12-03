@@ -98,7 +98,8 @@ export default {
         const res = await this.$store.dispatch('post/IMAGE_UPLOAD', formData)
         this.images = [...this.images, res.fileName]
       } catch (error) {
-        alert(error.response.data.message)
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
+        this.$store.commit('OPEN_ALERT')
       }
     },
     async onSubmitForm () {
@@ -114,7 +115,8 @@ export default {
         await this.$store.dispatch('post/PRODUCT_UPLOAD', productInfo)
         this.clearFormInput()
       } catch (error) {
-        alert(error.response.data.message)
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
+        this.$store.commit('OPEN_ALERT')
       }
     },
     imageDelete (image) {

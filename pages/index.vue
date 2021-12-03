@@ -6,7 +6,6 @@
       <NewProduct />
       <Benner />
     </v-container>
-    <Modal />
   </main>
 </template>
 
@@ -16,15 +15,12 @@ import BestProduct from '@/components/home/BestProduct'
 import NewProduct from '@/components/home/NewProduct'
 import Benner from '@/components/home/Benner'
 
-import Modal from '@/components/common/Modal'
-
 export default {
   components: {
     MainImage,
     BestProduct,
     NewProduct,
-    Benner,
-    Modal
+    Benner
   }
 }
 </script>

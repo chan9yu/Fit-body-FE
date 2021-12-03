@@ -11,6 +11,7 @@
         class="ma-1"
         color="error"
         large
+        @click="closeModal"
       >
         취소하기
       </v-btn>
@@ -18,6 +19,7 @@
         class="ma-1"
         color="primary"
         large
+        @click="buyProduct"
       >
         구매하기
       </v-btn>
@@ -27,7 +29,45 @@
 
 <script>
 export default {
+  props: {
+    mode: {
+      type: String,
+      required: true
+    },
+    itemId: {
+      type: String,
+      default: ''
+    }
+  },
 
+  methods: {
+    async buyProduct () {
+      if (this.mode === 'single') {
+        try {
+          await this.$store.dispatch('purchase/ONE_PURCHASE', this.itemId)
+          this.$store.commit('SET_MESSAGE', '구매를 완료했습니다.')
+          this.$store.commit('OPEN_ALERT')
+        } catch (error) {
+          this.$store.commit('SET_MESSAGE', error.response.data.message)
+          this.$store.commit('OPEN_ALERT')
+        }
+      } else if (this.mode === 'array') {
+        try {
+          await this.$store.dispatch('purchase/CART_ALL_PURCHASE')
+          await this.$store.dispatch('cart/CART_IMTES_INFO')
+          this.$store.commit('SET_MESSAGE', '구매를 완료했습니다.')
+          this.$store.commit('OPEN_ALERT')
+        } catch (error) {
+          this.$store.commit('SET_MESSAGE', error.response.data.message)
+          this.$store.commit('OPEN_ALERT')
+        }
+      }
+      this.closeModal()
+    },
+    closeModal () {
+      this.$emit('closeModal')
+    }
+  }
 }
 </script>
 

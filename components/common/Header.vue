@@ -146,6 +146,7 @@ export default {
         { name: '회원가입', to: '/signup', icon: 'mdi-account' }
       ],
       afterLoginNavs: [
+        { name: '내 정보', data: 'MyPage', icon: 'mdi-user-alt' },
         { name: '장바구니', data: 'Cart', icon: 'mdi-cart' },
         { name: '로그아웃', data: 'Logout', icon: 'mdi-logout' }
       ],
@@ -164,6 +165,9 @@ export default {
     // 각 버튼 마다 다른 기능 제공
     onClickButton (data) {
       switch (data) {
+        case 'MyPage':
+          this.$router.push('/mypage')
+          break
         case 'Cart':
           this.$router.push('/cart')
           break

@@ -7,17 +7,31 @@
       large
       color="primary"
       dark
-      @click="onClickPurchase"
+      @click="toBuyModalShow"
     >
       모두 구매하기
     </v-btn>
+    <transition name="fade">
+      <Modal v-if="showModal" mode="array" @closeModal="closeModal" />
+    </transition>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import Modal from '@/components/common/Modal'
 
 export default {
+  components: {
+    Modal
+  },
+
+  data () {
+    return {
+      showModal: false
+    }
+  },
+
   computed: {
     ...mapState('cart', ['cartInfo', 'cartItems'])
   },
@@ -31,6 +45,12 @@ export default {
         res = (count[i] * price[i]) + res
       }
       return res.toLocaleString()
+    },
+    toBuyModalShow () {
+      this.showModal = true
+    },
+    closeModal () {
+      this.showModal = false
     },
     async onClickPurchase () {
       try {

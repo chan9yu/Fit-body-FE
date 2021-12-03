@@ -36,7 +36,7 @@
         <span class="text-h6">{{ price }}원</span>
       </div>
       <div class="product-btns">
-        <v-btn @click="buyProduct">
+        <v-btn @click="toBuyModalShow">
           구매하기
         </v-btn>
         <v-btn @click="addCart">
@@ -44,17 +44,31 @@
         </v-btn>
       </div>
     </div>
+    <transition name="fade">
+      <Modal v-if="showModal" :item-id="product[0]._id" mode="single" @closeModal="closeModal" />
+    </transition>
   </v-container>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import Modal from '@/components/common/Modal'
 
 export default {
+  components: {
+    Modal
+  },
+
   props: {
     product: {
       type: Array,
       required: true
+    }
+  },
+
+  data () {
+    return {
+      showModal: false
     }
   },
 
@@ -67,15 +81,11 @@ export default {
   },
 
   methods: {
-    async buyProduct () {
-      try {
-        await this.$store.dispatch('purchase/ONE_PURCHASE', this.product[0]._id)
-        this.$store.commit('SET_MESSAGE', '구매를 완료했습니다.')
-        this.$store.commit('OPEN_ALERT')
-      } catch (error) {
-        this.$store.commit('SET_MESSAGE', error.response.data.message)
-        this.$store.commit('OPEN_ALERT')
-      }
+    toBuyModalShow () {
+      this.showModal = true
+    },
+    closeModal () {
+      this.showModal = false
     },
     async addCart () {
       try {
@@ -124,5 +134,12 @@ export default {
       }
     }
   }
+}
+
+:is(.fade-enter-active, .fade-leave-active) {
+  transition: opacity .5s;
+}
+:is(.fade-enter, .fade-leave-to) {
+  opacity: 0;
 }
 </style>

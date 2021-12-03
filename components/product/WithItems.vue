@@ -70,7 +70,8 @@ export default {
       try {
         await this.$store.dispatch('post/WITH_PRODUCT')
       } catch (error) {
-        console.error(error)
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
+        this.$store.commit('OPEN_ALERT')
       }
     },
     productTitle (title) {
