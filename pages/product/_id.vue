@@ -8,6 +8,9 @@
         <ProductDescription :product="product" />
       </v-col>
     </v-row>
+    <div class="comment-box">
+      <CommentList :product-id="productId" />
+    </div>
     <WithItems :categorys="product[0].categorys" />
   </v-container>
 </template>
@@ -17,12 +20,14 @@ import { mapState } from 'vuex'
 import axios from 'axios'
 import ProductImage from '@/components/product/ProductImage'
 import ProductDescription from '@/components/product/ProductDescription'
+import CommentList from '@/components/product/CommentList'
 import WithItems from '@/components/product/WithItems'
 
 export default {
   components: {
     ProductImage,
     ProductDescription,
+    CommentList,
     WithItems
   },
 
@@ -41,10 +46,16 @@ export default {
   },
 
   computed: {
-    ...mapState('post', ['product'])
+    ...mapState('post', ['product']),
+    productId () {
+      return this.$route.params.id
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.comment-box {
+  margin: 100px 0;
+}
 </style>
