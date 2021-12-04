@@ -71,7 +71,7 @@ export default {
         await this.$store.dispatch('post/WITH_PRODUCT')
       } catch (error) {
         this.$store.commit('SET_MESSAGE', error.response.data.message)
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       }
     },
     productTitle (title) {

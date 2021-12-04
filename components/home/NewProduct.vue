@@ -83,7 +83,7 @@ export default {
         await this.$store.dispatch('post/PRODUCTS_INFO', body)
       } catch {
         this.$store.commit('SET_MESSAGE', '정보를 불러오는데 실패하였습니다!')
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       }
     },
     async loadMoreProductsInfo () {
@@ -97,7 +97,7 @@ export default {
         await this.$store.dispatch('post/PRODUCTS_INFO', body)
       } catch {
         this.$store.commit('SET_MESSAGE', '정보를 불러오는데 실패하였습니다!')
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       }
     },
     // 글자 수 20자 넘길 시 ... 처리

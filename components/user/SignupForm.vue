@@ -79,15 +79,15 @@ export default {
           }
           await this.$store.dispatch('user/SIGNUP', data)
           this.$store.commit('SET_MESSAGE', '가입이 완료되었습니다.')
-          this.$store.commit('OPEN_ALERT')
+          this.$store.dispatch('AUTO_ALERT')
           this.$router.push('/login')
         } catch (error) {
           this.$store.commit('SET_MESSAGE', error.response.data.message)
-          this.$store.commit('OPEN_ALERT')
+          this.$store.dispatch('AUTO_ALERT')
         }
       } else {
         this.$store.commit('SET_MESSAGE', '빈칸이 있으면 안 됩니다.')
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       }
     }
   }

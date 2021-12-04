@@ -1,5 +1,8 @@
 export default {
-  SET_COMMENT_INFO (state, payload) {
-    state.comment = payload
+  SET_COMMENTS_INFO (state, payload) {
+    state.comments = payload
+  },
+  CLEAR_COMMENTS_INFO (state) {
+    state.comments = []
   }
 }

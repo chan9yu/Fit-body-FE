@@ -21,5 +21,11 @@ export const mutations = {
 export const actions = {
   nuxtServerInit ({ dispatch }) {
     return dispatch('user/USER')
+  },
+  AUTO_ALERT ({ commit }) {
+    commit('OPEN_ALERT')
+    setTimeout(() => {
+      commit('COLSE_ALERT')
+    }, 1000)
   }
 }

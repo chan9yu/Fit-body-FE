@@ -95,17 +95,17 @@ export default {
         await this.$store.dispatch('cart/CART_IMTES_INFO')
       } catch (error) {
         this.$store.commit('SET_MESSAGE', error.response.data.message)
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       }
     },
     async removeCartItem (id) {
       try {
         await this.$store.dispatch('cart/DELETE_CART_IMTES', id)
         this.$store.commit('SET_MESSAGE', '상품을 삭제했습니다!')
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       } catch (error) {
         this.$store.commit('SET_MESSAGE', error.response.data.message)
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       }
     },
     price (price, index) {

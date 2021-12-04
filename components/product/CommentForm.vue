@@ -6,8 +6,8 @@
         label="내용을 입력해주세요!"
         auto-grow
         outlined
-        rows="3"
-        row-height="45"
+        rows="2"
+        row-height="30"
         clearable
       />
       <v-btn :disabled="!content" type="submit" class="comment-btn">
@@ -42,11 +42,12 @@ export default {
         const commentData = { productId: this.productId, content: this.content }
         await this.$store.dispatch('comment/POST_COMMENT', commentData)
         this.$store.commit('SET_MESSAGE', '댓글이 등록되었습니다.')
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
         this.content = ''
+        this.$emit('commentUpdate')
       } catch (error) {
         this.$store.commit('SET_MESSAGE', error.response.data.message)
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       }
     }
   }

@@ -99,7 +99,7 @@ export default {
         this.images = [...this.images, res.fileName]
       } catch (error) {
         this.$store.commit('SET_MESSAGE', error.response.data.message)
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       }
     },
     async onSubmitForm () {
@@ -116,7 +116,7 @@ export default {
         this.clearFormInput()
       } catch (error) {
         this.$store.commit('SET_MESSAGE', error.response.data.message)
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       }
     },
     imageDelete (image) {

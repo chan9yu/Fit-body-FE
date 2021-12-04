@@ -174,7 +174,7 @@ export default {
         case 'Logout':
           this.$store.dispatch('user/LOGOUT')
           this.$store.commit('SET_MESSAGE', '로그아웃을 하였습니다!')
-          this.$store.commit('OPEN_ALERT')
+          this.$store.dispatch('AUTO_ALERT')
           this.$router.replace('/')
           break
         default:

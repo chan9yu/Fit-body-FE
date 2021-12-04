@@ -68,7 +68,7 @@ export default {
       await store.dispatch('purchase/GET_PURCHASE_INFO')
     } catch (error) {
       this.$store.commit('SET_MESSAGE', error.response.data.message)
-      this.$store.commit('OPEN_ALERT')
+      this.$store.dispatch('AUTO_ALERT')
     }
   },
 

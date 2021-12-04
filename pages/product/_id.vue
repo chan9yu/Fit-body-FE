@@ -41,7 +41,7 @@ export default {
       store.commit('post/SET_SKIP', 0)
     } catch (error) {
       this.$store.commit('SET_MESSAGE', error.response.data.message)
-      this.$store.commit('OPEN_ALERT')
+      this.$store.dispatch('AUTO_ALERT')
     }
   },
 

@@ -57,10 +57,10 @@ export default {
         await this.$store.dispatch('purchase/CART_ALL_PURCHASE')
         await this.$store.dispatch('cart/CART_IMTES_INFO')
         this.$store.commit('SET_MESSAGE', '구매를 완료했습니다.')
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       } catch (error) {
         this.$store.commit('SET_MESSAGE', error.response.data.message)
-        this.$store.commit('OPEN_ALERT')
+        this.$store.dispatch('AUTO_ALERT')
       }
     }
   }
