@@ -46,11 +46,11 @@ export default {
   build: {
   },
   server: {
-    port: isProduction ? null : 3000
+    port: isProduction ? null : 8080
   },
   env: {
     baseURL: isProduction
       ? 'https://bodyfit-server.herokuapp.com'
-      : 'http://localhost:8080'
+      : 'http://localhost:3000'
   }
 }

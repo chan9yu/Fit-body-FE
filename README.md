@@ -36,7 +36,7 @@
   <tr>
     <td>5주차</td>
     <td rowspan="2">
-      프로젝트 초기화 및 설정 (Eslint, vuetify 등등)<br />
+      프로젝트 초기화 및 설정<br />
       깃허브 레포지토리 생성, 버전관리 시작<br />
       완성된 레이아웃을 참고해서 마크업 진행, 모바일, 테블렛 사이즈 고려하면서 스타일링<br />
       더미데이터로 화면에 데이터 뿌려서 동작 테스트해보기
@@ -49,8 +49,7 @@
     <td>7주차</td>
     <td rowspan="2">
       작업된 화면과 더미데이터, 스토리보드를 참고해 db 스키마 작성<br />
-      회원기능은 JWT 으로 구현 (시도하고 어렵다싶으면 세션으로 변경)<br />
-      백엔드 API 구성, 포스트맨을 이용해서 API 테스트, API 문서화 (가능하면 스웨거 api로 자동화)
+      백엔드 API 구성, 포스트맨을 이용해서 API 테스트
     </td>
   </tr>
   <tr>
@@ -59,9 +58,8 @@
   <tr>
     <td>9주차</td>
     <td rowspan="2">
-      프론트엔드와 완성된 백엔드API 연동하고 (Axios 사용) 기능 구현해가기<br />
-      더미데이터를 실제 db데이터로 교체<br />
-      jest를 이용해 프론트엔드 테스트 해보기 (시간적 여유가 있을 때)
+      프론트엔드와 완성된 백엔드API 연동하고 기능 구현해가기<br />
+      더미데이터를 실제 db데이터로 교체
     </td>
   </tr>
   <tr>
@@ -70,7 +68,7 @@
   <tr>
     <td>11주차</td>
     <td rowspan="2">
-      nuxt 프로젝트에 typescript 를 점진적으로 적용 (시도)
+      프로젝트 모든 기능 완성하기
     </td>
   </tr>
   <tr>
@@ -78,11 +76,11 @@
   </tr>
   <tr>
     <td>13주차</td>
-    <td>주변 사람들에게 프로젝트 테스트를 받고 정보를 토대로 유지보수</td>
+    <td>heroku를 이용해 프론트엔드, 백엔드 배포 하기</td>
   </tr>
   <tr>
     <td>14주차</td>
-    <td>헤로쿠를 이용해 프론트엔드, 백엔드 배포(CD) 하기</td>
+    <td>주변 사람들에게 프로젝트 테스트를 받고 정보를 토대로 유지보수</td>
   </tr>
   </tr>
   <tr>
@@ -104,7 +102,6 @@
 ### Back-End
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
@@ -127,16 +124,15 @@
 <br /><br />
 
 ## 시스템 기본 플로우 📝
-- [ ] 메인페이지 접속
-- [ ] 로그인 페이지 이동: 로그인 또는 회원가입 수행
-- [ ] 메인페이지 리다이렉트
-- [ ] 상품 조회: 메인페이지에서 상품목록 조회
-- [ ] 상품 조회: 메뉴를 이용해 해당 카테고리 페이지로 이동 후 상품목록 조회
-- [ ] 상품 생성: 해당하는 카테고리에 원하는 상품 등록 (관리자 기능)
-- [ ] 상품 상세 조회: 상품 조회 페이지에서 상품 상세페이지로 이동
-- [ ] 상품 상세 조회: 장바구니 & 결제 & 댓글 (회원기능)
-- [ ] 상품 수정: 해당 상품 정보 수정기능 (관리자 기능)
-- [ ] 상품 삭제: 해당 상품 삭제 (관리자 기능)
+- [x] 메인페이지 접속
+- [x] 로그인 페이지 이동: 로그인 또는 회원가입 진행
+- [x] 상품 조회: 메인페이지에서 상품목록 조회
+- [x] 상품 조회: 메뉴를 이용해 해당 카테고리 페이지로 이동 후 상품목록 조회
+- [x] 상품 상세 조회: 상품 조회 페이지에서 상품 상세페이지로 이동
+- [x] 상품 상세 조회: 다른상품 보기와, 댓글 기능 (회원기능)
+- [x] 상품 리스트 조회: 유저가 저장한 장바구니 리스트 페이지 (회원기능)
+- [x] 상품 리스트 조회: 유저가 구매한 구매목록 리스트 페이지 (회원기능)
+- [x] 상품 생성: 해당하는 카테고리에 원하는 상품 등록 (관리자 기능)
 <br />
 
 ## 화면 미리보기 🖥

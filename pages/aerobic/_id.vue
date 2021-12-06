@@ -52,7 +52,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: require('@/assets/images/carousel/main_2.png')
+          content: require('@/assets/images/carousel/main_3.png')
         }
       ]
     }

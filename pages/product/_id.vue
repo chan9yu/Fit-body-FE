@@ -67,7 +67,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.product[0].images[0]
+          content: `${process.env.baseURL}/${this.product[0].images[0]}`
         }
       ]
     }
