@@ -4,7 +4,7 @@
     <v-container>
       <BestProduct />
       <NewProduct />
-      <Benner />
+      <Benner class="benner" />
     </v-container>
   </main>
 </template>
@@ -24,17 +24,17 @@ export default {
   },
 
   head: {
-    title: '헬스기구전문 브랜드 Fitody',
+    title: '헬스기구전문 브랜드 Fitbody',
     meta: [
       {
         hid: 'og:title',
         property: 'og:title',
-        content: '헬스기구전문 브랜드 Fitody'
+        content: '헬스기구전문 브랜드 Fitbody'
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: '헬스기구전문 브랜드 Fitody 입니다.'
+        content: '헬스기구전문 브랜드 Fitbody 입니다.'
       },
       {
         hid: 'og:image',
@@ -46,4 +46,10 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@media screen and (max-width: 600px) {
+  .benner {
+    display: none;
+  }
+}
+</style>

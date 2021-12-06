@@ -23,6 +23,21 @@ export default {
     Header,
     Footer,
     Alert
+  },
+
+  // created () {
+  //   this.setUser()
+  // },
+
+  methods: {
+    async setUser () {
+      try {
+        await this.$store.dispatch('user/USER')
+      } catch (error) {
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
+        this.$store.dispatch('AUTO_ALERT')
+      }
+    }
   }
 }
 </script>

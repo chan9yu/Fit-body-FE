@@ -78,6 +78,10 @@ export default {
     productId () {
       return this.$route.params.id
     }
+  },
+
+  created () {
+    console.log(`${process.env.baseURL}/${this.product[0].images[0]}`)
   }
 }
 </script>

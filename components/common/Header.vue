@@ -81,26 +81,8 @@
       <v-divider />
       <v-list dense nav>
         <!-- 로그인 유무 분기 처리 -->
-        <!-- 로그인 정보가 없으면 -->
-        <template v-if="user === null">
-          <v-list-item
-            v-for="beforeLoginNav in beforeLoginNavs"
-            :key="beforeLoginNav.name"
-            link
-            :to="beforeLoginNav.to"
-            class="py-1"
-            active-class="primary lighten-2"
-          >
-            <v-list-item-icon>
-              <v-icon>{{ beforeLoginNav.icon }}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>{{ beforeLoginNav.name }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </template>
         <!-- 로그인 정보가 있으면 -->
-        <template v-else>
+        <template v-if="user !== null">
           <v-list-item
             v-for="afterLoginNav in afterLoginNavs"
             :key="afterLoginNav.name"
@@ -114,6 +96,24 @@
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>{{ afterLoginNav.name }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </template>
+        <!-- 로그인 정보가 없으면 -->
+        <template v-else>
+          <v-list-item
+            v-for="beforeLoginNav in beforeLoginNavs"
+            :key="beforeLoginNav.name"
+            link
+            :to="beforeLoginNav.to"
+            class="py-1"
+            active-class="primary lighten-2"
+          >
+            <v-list-item-icon>
+              <v-icon>{{ beforeLoginNav.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>{{ beforeLoginNav.name }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </template>
@@ -169,6 +169,20 @@ export default {
     }
   },
 
+  watch: {
+    user (val, oldVal) {
+      if (val === null) {
+        if (val !== oldVal) {
+          this.setUser()
+        }
+      }
+    }
+  },
+
+  mounted () {
+    this.setUser()
+  },
+
   methods: {
     // 각 버튼 마다 다른 기능 제공
     onClickButton (data) {
@@ -181,6 +195,14 @@ export default {
           break
         default:
           break
+      }
+    },
+    async setUser () {
+      try {
+        await this.$store.dispatch('user/USER')
+      } catch (error) {
+        this.$store.commit('SET_MESSAGE', error.response.data.message)
+        this.$store.dispatch('AUTO_ALERT')
       }
     }
   }
