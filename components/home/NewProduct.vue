@@ -1,10 +1,10 @@
 <template>
-  <v-container class="my-16">
-    <p class="text-h3 font-weight-regular text-center my-16">
+  <v-container class="products-container">
+    <p class="font-weight-regular text-center">
       All Products
     </p>
     <v-row>
-      <v-col v-for="product in productInfo.products" :key="product._id" cols="12" lg="3" md="4">
+      <v-col v-for="product in productInfo.products" :key="product._id" cols="6" lg="3" md="4">
         <v-hover>
           <template #default="{ hover }">
             <v-card>
@@ -119,3 +119,21 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.products-container {
+  margin-top: 64px;
+  @media screen and (max-width: 600px) {
+    margin-top: 0px;
+  }
+  > p {
+    margin: 48px 0;
+    font-size: 48px;
+    @media screen and (max-width: 768px) {
+      margin: 24px 0;
+      font-size: 30px;
+    }
+  }
+}
+
+</style>

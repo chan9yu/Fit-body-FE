@@ -1,7 +1,7 @@
 <template>
   <client-only>
     <nav>
-      <v-app-bar app height="80" class="pl-10 pr-10">
+      <v-app-bar app :height="appBarHeight" class="pl-10 pr-10 app-header">
         <v-app-bar-title>
           <Logo />
         </v-app-bar-title>
@@ -82,8 +82,8 @@
         <v-divider />
         <v-list dense nav>
           <!-- 로그인 유무 분기 처리 -->
-          <!-- 로그인 정보가 있으면 -->
-          <template v-if="user !== null">
+          <!-- 로그인 정보가 없으면 -->
+          <template v-if="user === null">
             <v-list-item
               v-for="beforeLoginNav in beforeLoginNavs"
               :key="beforeLoginNav.name"
@@ -100,7 +100,7 @@
               </v-list-item-content>
             </v-list-item>
           </template>
-          <!-- 로그인 정보가 없으면 -->
+          <!-- 로그인 정보가 있으면 -->
           <template v-else>
             <v-list-item
               v-for="afterLoginNav in afterLoginNavs"
@@ -146,8 +146,8 @@ export default {
         { name: '회원가입', to: '/signup', icon: 'mdi-account' }
       ],
       afterLoginNavs: [
-        { name: '내 정보', data: 'MyPage', icon: 'mdi-user-alt' },
-        { name: '장바구니', data: 'Cart', icon: 'mdi-cart' },
+        { name: '내 정보', to: '/mypage', data: 'MyPage', icon: 'mdi-account' },
+        { name: '장바구니', to: '/cart', data: 'Cart', icon: 'mdi-cart' },
         { name: '로그아웃', data: 'Logout', icon: 'mdi-logout' }
       ],
       drawer: false
@@ -158,6 +158,16 @@ export default {
     ...mapState('user', ['user']),
     mdDown () {
       return this.$vuetify.breakpoint.mdAndDown
+    },
+    appBarHeight () {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return 50
+        case 'sm': return 60
+        case 'md': return 70
+        case 'lg': return 75
+        case 'xl': return 80
+        default: return null
+      }
     }
   },
 
@@ -165,12 +175,6 @@ export default {
     // 각 버튼 마다 다른 기능 제공
     onClickButton (data) {
       switch (data) {
-        case 'MyPage':
-          this.$router.push('/mypage')
-          break
-        case 'Cart':
-          this.$router.push('/cart')
-          break
         case 'Logout':
           this.$store.dispatch('user/LOGOUT')
           this.$store.commit('SET_MESSAGE', '로그아웃을 하였습니다!')

@@ -5,10 +5,14 @@
         <v-img
           :src="require(`@/assets/images/banner/banner_${i}.png`)"
           class="ma-4"
-          width="240"
-          height="240"
+          :width="240"
+          :height="240"
         />
       </v-slide-item>
     </v-slide-group>
   </v-sheet>
 </template>
+
+<script>
+export default {}
+</script>

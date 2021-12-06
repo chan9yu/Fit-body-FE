@@ -7,6 +7,10 @@
       <v-col
         v-for="product in withProducts.products"
         :key="product._id"
+        cols="6"
+        md="3"
+        lg="3"
+        xl="3"
       >
         <v-hover>
           <template #default="{ hover }">

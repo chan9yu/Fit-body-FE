@@ -19,7 +19,7 @@
               <td class="text-left">
                 {{ comment.content }}
               </td>
-              <td class="text-right" style="width: 200px">
+              <td class="text-right comment-date" style="width: 200px">
                 {{ commentDateFormat(comment.createdAt) }}
               </td>
               <td style="width: 64px">
@@ -116,5 +116,11 @@ tr {
 
 p {
   color: #aaa;
+}
+
+.comment-date {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 </style>

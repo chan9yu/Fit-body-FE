@@ -1,20 +1,22 @@
 <template>
-  <div class="table-footer">
-    <div class="total-text">
-      <span>최종 결제 금액</span> {{ totalPrice() }} 원
+  <client-only>
+    <div class="table-footer">
+      <div class="total-text">
+        <span>최종 결제 금액</span> {{ totalPrice() }} 원
+      </div>
+      <v-btn
+        large
+        color="primary"
+        dark
+        @click="toBuyModalShow"
+      >
+        모두 구매하기
+      </v-btn>
+      <transition name="fade">
+        <Modal v-if="showModal" mode="array" @closeModal="closeModal" />
+      </transition>
     </div>
-    <v-btn
-      large
-      color="primary"
-      dark
-      @click="toBuyModalShow"
-    >
-      모두 구매하기
-    </v-btn>
-    <transition name="fade">
-      <Modal v-if="showModal" mode="array" @closeModal="closeModal" />
-    </transition>
-  </div>
+  </client-only>
 </template>
 
 <script>
@@ -83,6 +85,16 @@ export default {
     span {
       font-size: 20px;
       color: #888;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 5px;
+    .total-text {
+      font-size: 20px;
+      span {
+        font-size: 15px;
+      }
     }
   }
 }

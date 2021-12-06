@@ -1,7 +1,7 @@
 <template>
-  <v-container class="my-16">
+  <v-container class="product-item-box">
     <v-row>
-      <v-col v-for="product in productInfo.products" :key="product._id" cols="12" lg="3" md="4">
+      <v-col v-for="product in productInfo.products" :key="product._id" cols="6" lg="3" md="4">
         <v-hover>
           <template #default="{ hover }">
             <v-card>
@@ -119,6 +119,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.product-item-box {
+  margin-top: 64px;
+  @media screen and (max-width: 768px) {
+    margin-top: 24px;
+  }
+}
 </style>

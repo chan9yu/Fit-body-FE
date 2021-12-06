@@ -40,6 +40,10 @@ export default {
   transform: translateX(-50%);
   span {
     padding: 0 20px 0 10px;
+    @media screen and (max-width: 425px) {
+      padding: 0 15px 0 5px;
+      font-size: 10px;
+    }
   }
   .close-btn {
     cursor: pointer;

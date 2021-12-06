@@ -34,7 +34,6 @@
           </tbody>
         </template>
       </v-simple-table>
-      <TableFooter />
     </div>
     <div v-else class="default-img">
       <p class="text-h5 font-weight-regular text-center my-16">
