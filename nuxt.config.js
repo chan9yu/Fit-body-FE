@@ -22,7 +22,7 @@ export default {
   css: [
   ],
   styleResources: {
-    scss: ['~/assets/scss/style.scss']
+    sass: ['~/assets/scss/style.scss']
   },
   plugins: [
   ],

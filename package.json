@@ -5,8 +5,8 @@
   "npm": "8.1.0",
   "private": true,
   "engines": {
-    "node":"16.13.0",
-    "npm":"8.1.0"
+    "node": "16.13.0",
+    "npm": "8.1.0"
   },
   "scripts": {
     "dev": "nuxt",
