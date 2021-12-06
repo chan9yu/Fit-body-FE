@@ -22,12 +22,13 @@ export default {
   css: [
   ],
   styleResources: {
-    sass: ['~/assets/scss/style.scss']
+    scss: ['~/assets/scss/style.scss']
   },
   plugins: [
   ],
   components: true,
   buildModules: [
+    '@nuxtjs/style-resources',
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify'
   ],
@@ -40,7 +41,6 @@ export default {
     }
   },
   modules: [
-    '@nuxtjs/style-resources',
     '@nuxtjs/axios'
   ],
   build: {
