@@ -1,3 +1,5 @@
+const isProduction = process.env.NODE_ENV === 'production'
+
 export default {
   head: {
     title: '헬스기구전문 브랜드 Fitody',
@@ -44,11 +46,11 @@ export default {
   build: {
   },
   server: {
-    port: process.env.NODE_ENV === 'production' ? null : 8080
+    port: isProduction ? null : 3000
   },
   env: {
-    baseURL: process.env.NODE_ENV === 'production'
+    baseURL: isProduction
       ? 'https://bodyfit-server.herokuapp.com'
-      : 'http://localhost:3000'
+      : 'http://localhost:8080'
   }
 }
