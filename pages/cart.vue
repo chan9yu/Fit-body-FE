@@ -17,6 +17,34 @@ export default {
     CartTable
   },
 
+  head () {
+    return {
+      title: `${this.user.name}님의 장바구니`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.user.name}님의 장바구니`
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${this.user.name}님의 장바구니`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `${this.user.name}님의 장바구니`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: require('@/assets/images/carousel/main_2.png')
+        }
+      ]
+    }
+  },
+
   computed: {
     ...mapState(['alertToggle']),
     ...mapState('user', ['user'])

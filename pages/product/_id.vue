@@ -45,6 +45,34 @@ export default {
     }
   },
 
+  head () {
+    return {
+      title: this.product[0].title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.product[0].description
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.product[0].title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.product[0].description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.product[0].images[0]
+        }
+      ]
+    }
+  },
+
   computed: {
     ...mapState('post', ['product']),
     productId () {

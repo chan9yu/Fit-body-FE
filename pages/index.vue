@@ -21,6 +21,27 @@ export default {
     BestProduct,
     NewProduct,
     Benner
+  },
+
+  head: {
+    title: '헬스기구전문 브랜드 Fitody',
+    meta: [
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: '헬스기구전문 브랜드 Fitody'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: '헬스기구전문 브랜드 Fitody 입니다.'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: require('@/assets/images/carousel/main_2.png')
+      }
+    ]
   }
 }
 </script>

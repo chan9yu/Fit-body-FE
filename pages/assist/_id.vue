@@ -34,6 +34,30 @@ export default {
       ]
     }
   },
+
+  head () {
+    return {
+      title: `Fitbody | ${this.title}-${this.subTitle}`,
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `Fitbody | ${this.title}`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `Fitbody | ${this.title}`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: require('@/assets/images/carousel/main_2.png')
+        }
+      ]
+    }
+  },
+
   computed: {
     subTitle () {
       switch (this.$route.params.id) {

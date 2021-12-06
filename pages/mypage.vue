@@ -71,6 +71,34 @@ export default {
     }
   },
 
+  head () {
+    return {
+      title: `${this.user.name}님의 구매내역`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.user.name}님의 구매내역`
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${this.user.name}님의 구매내역`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `${this.user.name}님의 구매내역`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: require('@/assets/images/carousel/main_2.png')
+        }
+      ]
+    }
+  },
+
   computed: {
     ...mapState('purchase', ['purchase']),
     ...mapState('user', ['user']),

@@ -41,6 +41,29 @@ export default {
         }
       ]
     }
+  },
+
+  head () {
+    return {
+      title: `Fitbody | ${this.title}`,
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `Fitbody | ${this.title}`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `Fitbody | ${this.title}`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: require('@/assets/images/carousel/main_2.png')
+        }
+      ]
+    }
   }
 }
 </script>
