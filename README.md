@@ -1,26 +1,33 @@
 # Fit body 👩‍👦‍👦
+
 `Fit body(핏바디)`는 다양한 홈트레이닝용 운동기구를 판매하는 쇼핑몰 입니다. <br />
 
-> 개발 기간: 2021.09.26 ~ ing <br />
-> 개발 인원: 1명 (개인 프로젝트)
+<img src="https://user-images.githubusercontent.com/80776262/145029869-8064cb60-5876-481f-b97d-e314fc8367e6.PNG">
 <br />
 
-[Fit body!](https://bodyfit-app.herokuapp.com/)
+
+> 개발 기간: 2021.09.26 ~ 2021.12.06 <br />
+> 개발 인원: 1명 (개인 프로젝트)
+
+<br />
+
+[Fit body 들어가기!](https://bodyfit-app.herokuapp.com/) <br />
+[Fit-body-BE](https://github.com/changyuyeo/Fit-body-BE)
 
 ## Index 📖
-1. 프로젝트 주제 선정 이유
-1. 프로젝트 스케줄
-1. 사용기술
-1. 프로젝트 구조
-1. 주요 기능 미리보기
+1. [프로젝트 주제 선정 이유](#선정-이유)
+1. [프로젝트 스케줄](#프로젝트-스케줄주차별)
+2. [사용 기술](#사용-기술)
+3. [프로젝트 구조](#프로젝트-구조-)
+4. [주요 기능 미리보기]()
 <br />
 
-## 선정 이유
+# 선정 이유
 계속되는 코로나로 인해 헬스장보다는 홈트레이닝을 꾸리는 사람들이<br />
 늘어가는 추세이기 떄문에 운동용품을 아이템으로 쇼핑몰 주제를 생각해봤습니다.
 <br /><br />
 
-## 프로젝트 스케줄 (주차별)
+# 프로젝트 스케줄(주차별)
 <table>
   <tr>
     <td>주차별</td>
@@ -36,15 +43,17 @@
   </tr>
   <tr>
     <td>5주차</td>
-    <td rowspan="2">
+    <td>
       프로젝트 초기화 및 설정<br />
       깃허브 레포지토리 생성, 버전관리 시작<br />
-      완성된 레이아웃을 참고해서 마크업 진행, 모바일, 테블렛 사이즈 고려하면서 스타일링<br />
-      더미데이터로 화면에 데이터 뿌려서 동작 테스트해보기
     </td>
   </tr>
   <tr>
     <td>6주차</td>
+    <td>
+      완성된 레이아웃을 참고해서 마크업 진행, 모바일, 테블렛 사이즈 고려하면서 스타일링<br />
+      더미데이터로 화면에 데이터 뿌려서 동작 테스트해보기
+    </td>
   </tr>
   <tr>
     <td>7주차</td>
@@ -91,34 +100,34 @@
 </table>
 <br />
 
-## 사용기술 🔍
-### Front-End
+# 사용 기술 
+### Front-End 🔍
 ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![NuxtJS](https://img.shields.io/badge/Nuxt-black?style=for-the-badge&logo=nuxt.js&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![Vuetify](https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=AEDDFF)
 
-### Back-End
+### Back-End 🔍
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-### Design
+### Design 🔍
 ![Adobe](https://img.shields.io/badge/adobe-%23FF0000.svg?style=for-the-badge&logo=adobe&logoColor=white)
 ![Adobe XD](https://img.shields.io/badge/Adobe%20XD-470137?style=for-the-badge&logo=Adobe%20XD&logoColor=#FF61F6)
 ![Adobe Photoshop](https://img.shields.io/badge/adobephotoshop-%2331A8FF.svg?style=for-the-badge&logo=adobephotoshop&logoColor=white)
 
-### IDE
+### IDE 🔍
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-### Hosting/SaaS
+### Hosting/SaaS 🔍
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 <br /><br />
 
-## 프로젝트 구조 🛠
+# 프로젝트 구조 🛠
 - [x] 메인페이지 접속
 - [x] 로그인 페이지 이동: 로그인 또는 회원가입 진행
 - [x] 상품 조회: 메인페이지에서 상품목록 조회
@@ -139,7 +148,9 @@
   </tr>
 
   <tr>
-    <td>업로드 다시</td>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/145027292-37be7a17-61b0-4f43-8577-5340256cecf5.gif width="600">
+    </td>
     <td>
       <b>메인 페이지</b> <br />
       - 웹 페이지에 들어오면 제일 먼저 볼 수 있는 메인 페이지 입니다. <br />
@@ -150,7 +161,7 @@
 
   <tr>
     <td>
-      <img src="https://user-images.githubusercontent.com/80776262/144866236-eda00afb-fec6-4804-89c9-dbc01d443e50.gif" width="500">
+      <img src="https://user-images.githubusercontent.com/80776262/144866236-eda00afb-fec6-4804-89c9-dbc01d443e50.gif" width="600">
     </td>
     <td>
       <b>회원 인증 페이지</b> <br />
@@ -160,7 +171,9 @@
   </tr>
 
   <tr>
-    <td>업로드 다시</td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/145027782-7bc0446e-087d-4b22-9292-4e1df506c09f.gif" width="600">
+    </td>
     <td>
       <b>카테고리 별 상품</b> <br />
       - 많은 상품 중 카테고리 별로 상품을 선택하여 볼 수 있습니다. <br />
@@ -169,7 +182,9 @@
   </tr>
 
   <tr>
-    <td>업로드 다시</td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/145028878-367706df-0d29-433a-a4c0-230c1105033e.gif" width="600">
+    </td>
     <td>
       <b>상품 상세 정보 보기</b> <br />
       - 해당 상품의 상세정보를 볼 수 있습니다. <br />
@@ -180,18 +195,18 @@
 
   <tr>
     <td>
-      <img src="https://user-images.githubusercontent.com/80776262/144866533-f60197dd-5bf0-4375-9101-f711225ff0f5.gif" width="500">
+      <img src="https://user-images.githubusercontent.com/80776262/144866533-f60197dd-5bf0-4375-9101-f711225ff0f5.gif" width="600">
     </td>
     <td>
       <b>장바구니</b> <br />
-      - 계속 상품을 장바구니에 담아왔다면 장바구니 페이지에 해당 상품들이 쌓이게 됩니다.  <br />
-      - 장바구니 상품들의 총 가격을 알 수 있고, 구매와 삭제가 가능합니다.
+      - 계속 상품을 장바구니에 담아왔다면 해당 상품들이 쌓이게 됩니다.  <br />
+      - 장바구니 상품들의 총 가격을 알 수 있고, 전체 구매와 삭제가 가능합니다.
     </td>
   </tr>
 
   <tr>
     <td>
-      <img src="https://user-images.githubusercontent.com/80776262/144865267-0c1a3b74-ffde-433e-8513-707127bd6e05.gif" width="500">
+      <img src="https://user-images.githubusercontent.com/80776262/144865267-0c1a3b74-ffde-433e-8513-707127bd6e05.gif" width="600">
     </td>
     <td>
       <b>구매내역</b> <br />
@@ -201,7 +216,7 @@
 
   <tr>
     <td>
-      <img src="https://user-images.githubusercontent.com/80776262/144867240-db153ecf-a924-4146-8de2-34c7da6cac06.gif" width="500">
+      <img src="https://user-images.githubusercontent.com/80776262/144867240-db153ecf-a924-4146-8de2-34c7da6cac06.gif" width="600">
     </td>
     <td>
       <b>상품 업로드</b> <br />
@@ -210,9 +225,31 @@
       - 당연히 어드민의 권한을 가진 계정만 가능합니다.
     </td>
   </tr>
-
-  
 </table>
+<br />
 
+### (추가) 메타데이터와 Open Graph 태그 추가!
+Nuxt 페이지에서 메타데이터와 SNS 상에서 공유할 때 해당 페이지의 정보가 잘 드러날 수 있도록 하기 위해 OG 태그를 추가했습니다!
 
+<img src="https://user-images.githubusercontent.com/80776262/145030504-91240347-d68c-4b25-b738-9e65cc2e23a2.PNG" width="500">
+<br />
 
+### (추가) 모바일 반응형 디자인!
+테블릿 모바일 환경에서도 이용할 수 있도록 반응형 디자인을 제공합니다!
+
+<table>
+  <tr>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/145031004-294aa8d5-f03f-4669-a589-bd1676fb2b60.jpg" width="250">
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/145031002-6b988474-05c2-467a-990f-27eea9ae3b0c.jpg" width="250">
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/145031007-67cbc797-e4a0-4d75-b27b-518491b12e2d.jpg" width="250">
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/145031009-b54be233-2185-4ad7-b319-4c8e97ef5bae.jpg" width="250">
+    </td>
+  </tr>
+</table>
