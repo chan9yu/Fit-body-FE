@@ -15,19 +15,19 @@
 [Fit-body-BE](https://github.com/changyuyeo/Fit-body-BE)
 
 ## Index 📖
-1. [프로젝트 주제 선정 이유](#선정-이유)
-1. [프로젝트 스케줄](#프로젝트-스케줄주차별)
-2. [사용 기술](#사용-기술)
-3. [프로젝트 구조](#프로젝트-구조-)
-4. [주요 기능 미리보기]()
+1. 프로젝트 주제 선정 이유
+1. 프로젝트 스케줄
+1. 프로젝트 사용기술
+1. 프로젝트 구조
+1. 주요 기능 미리보기
 <br />
 
-# 선정 이유
+## 선정 이유 ❓
 계속되는 코로나로 인해 헬스장보다는 홈트레이닝을 꾸리는 사람들이<br />
 늘어가는 추세이기 떄문에 운동용품을 아이템으로 쇼핑몰 주제를 생각해봤습니다.
 <br /><br />
 
-# 프로젝트 스케줄(주차별)
+## 프로젝트 스케줄 (주차별) 📅
 <table>
   <tr>
     <td>주차별</td>
@@ -100,43 +100,38 @@
 </table>
 <br />
 
-# 사용 기술 
-### Front-End 🔍
+## 사용기술 🔍
+### Front-End
 ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![NuxtJS](https://img.shields.io/badge/Nuxt-black?style=for-the-badge&logo=nuxt.js&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![Vuetify](https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=AEDDFF)
 
-### Back-End 🔍
+### Back-End
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-### Design 🔍
+### Design
 ![Adobe](https://img.shields.io/badge/adobe-%23FF0000.svg?style=for-the-badge&logo=adobe&logoColor=white)
 ![Adobe XD](https://img.shields.io/badge/Adobe%20XD-470137?style=for-the-badge&logo=Adobe%20XD&logoColor=#FF61F6)
 ![Adobe Photoshop](https://img.shields.io/badge/adobephotoshop-%2331A8FF.svg?style=for-the-badge&logo=adobephotoshop&logoColor=white)
 
-### IDE 🔍
+### IDE
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-### Hosting/SaaS 🔍
+### Hosting/SaaS
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 <br /><br />
 
-# 프로젝트 구조 🛠
-- [x] 메인페이지 접속
-- [x] 로그인 페이지 이동: 로그인 또는 회원가입 진행
-- [x] 상품 조회: 메인페이지에서 상품목록 조회
-- [x] 상품 조회: 메뉴를 이용해 해당 카테고리 페이지로 이동 후 상품목록 조회
-- [x] 상품 상세 조회: 상품 조회 페이지에서 상품 상세페이지로 이동
-- [x] 상품 상세 조회: 다른상품 보기와, 댓글 기능 (회원기능)
-- [x] 상품 리스트 조회: 유저가 저장한 장바구니 리스트 페이지 (회원기능)
-- [x] 상품 리스트 조회: 유저가 구매한 구매목록 리스트 페이지 (회원기능)
-- [x] 상품 생성: 해당하는 카테고리에 원하는 상품 등록 (관리자 기능)
+## 프로젝트 구조 🛠
+
+![정리](https://user-images.githubusercontent.com/80776262/145038751-5c79374e-b581-40b8-9762-cdc58286c528.png)
+
+
 <br />
 
 ## 주요 기능 미리보기 🖥
@@ -228,13 +223,13 @@
 </table>
 <br />
 
-### (추가) 메타데이터와 Open Graph 태그 추가!
+### (추가) 메타데이터와 Open Graph 태그 추가! 👀
 Nuxt 페이지에서 메타데이터와 SNS 상에서 공유할 때 해당 페이지의 정보가 잘 드러날 수 있도록 하기 위해 OG 태그를 추가했습니다!
 
 <img src="https://user-images.githubusercontent.com/80776262/145030504-91240347-d68c-4b25-b738-9e65cc2e23a2.PNG" width="500">
 <br />
 
-### (추가) 모바일 반응형 디자인!
+### (추가) 모바일 반응형 디자인! 👀
 테블릿 모바일 환경에서도 이용할 수 있도록 반응형 디자인을 제공합니다!
 
 <table>
